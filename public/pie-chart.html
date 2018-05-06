@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+    <meta charset = "utf-8">
+    <title>DC template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+    <link rel="stylesheet" type="text/css" href="style.css"/>    
+    <link rel="stylesheet" type="text/css" href="dc.min.css"/>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+    <script type="text/javascript" src="crossfilter.js"></script>
+    <script type="text/javascript" src="print_filter.js"></script>         
+    <script type="text/javascript" src="dc.min.js"></script>
+    <script type="text/javascript" src="colorbrewer.js"></script>  
+  </head>
+  <body>
+    <h1>
+       Crossfilter/DC.JS Exam:  Pie Chart
+    </h1>
+     <nav>
+       <ul>
+            <li id="currentpage"><a href="index.html">Crossfilter/DC.JS Exam: Home</a></li>
+            <li id="scatterplot"><a href="scatterplot.html">Scatter Plot</a></li>      
+            <li id="line-chart"><a href="line-chart.html">Line/Area Chart</a></li>         
+            <li id="pie-chart"><a href="#">Pie Chart</a></li>
+		    </ul>
+    </nav>
+    <br/>
+   <div><h3>Sales Data from the Logistics Game Competition.</h3></div>
+    <div class="container">
+      <table id="table" class="table table-hover"></table>    
+        
+    </div>
+
+   
+  <script type="text/javascript">         
+   //use D3 to read in the comma-separated values file and store the resulting array of objects to salesData
+  //Crossfilter & dc.js functions should be inside the d3.csv function
+    var salesData;
+    d3.csv("https://cdn.glitch.com/20ffec1e-7eef-4019-a852-b434433cd082%2FWkSales.csv?1525561040337", function (data) {      
+      salesData = data;    
+      print_filter('salesData');        
+    
+       var facts = crossfilter(salesData);
+    
+      
+      
+      
+      
+    });       
+    </script>
+  </body>
+</html>
