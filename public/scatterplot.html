@@ -28,8 +28,7 @@
     </nav>
     <br/>
    <div><h3>Sales Data from the Logistics Game Competition.</h3></div>
-    <div class="container">
-      <table id="table" class="table table-hover"></table>    
+    <div class="container" id="chart">
         
     </div>
 
@@ -38,9 +37,8 @@
    //use D3 to read in the comma-separated values file and store the resulting array of objects to salesData
   //Crossfilter & dc.js functions should be inside the d3.csv function
     var salesData;
-    d3.csv("https://cdn.glitch.com/20ffec1e-7eef-4019-a852-b434433cd082%2FWkSales.csv?1525561040337", function (data) {      
-      salesData = data;    
-      print_filter('salesData');        
+    d3.csv("https://cdn.glitch.com/fc491e57-6830-48e8-98e3-90565ad899ab%2FSales.csv?1525738804468", function (data) {      
+      salesData = data;        
     
        var facts = crossfilter(salesData);
     
